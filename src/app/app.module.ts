@@ -11,6 +11,7 @@ import { RecipesDetailComponent } from "./recipes/recipes-detail/recipes-detail.
 import { RecipeItemComponent } from "./recipes/recipes-list/recipe-item/recipe-item.component";
 import { ShoppingListComponent } from "./shopping-list/shopping-list.component";
 import { ShoppingEditComponent } from "./shopping-list/shopping-edit/shopping-edit.component";
+import { ShoppingListSerivce } from "./shopping-list/shoppinglist.serivce";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { ShoppingEditComponent } from "./shopping-list/shopping-edit/shopping-ed
     ShoppingEditComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
-  providers: [],
+  providers: [ShoppingListSerivce],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
