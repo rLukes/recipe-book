@@ -5,11 +5,4 @@ import { Component } from "@angular/core";
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"]
 })
-export class AppComponent {
-  title = "recipe-book";
-  loadedFeature = "recipe ";
-
-  onSelected(event: string) {
-    this.loadedFeature = event;
-  }
-}
+export class AppComponent {}
