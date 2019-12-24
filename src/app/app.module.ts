@@ -12,8 +12,9 @@ import { RecipeItemComponent } from "./recipes/recipes-list/recipe-item/recipe-i
 import { ShoppingListComponent } from "./shopping-list/shopping-list.component";
 import { ShoppingEditComponent } from "./shopping-list/shopping-edit/shopping-edit.component";
 import { ShoppingListSerivce } from "./shopping-list/shoppinglist.serivce";
-import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
-import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { RecipeStartComponent } from "./recipes/recipe-start/recipe-start.component";
+import { RecipeEditComponent } from "./recipes/recipe-edit/recipe-edit.component";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     RecipeStartComponent,
     RecipeEditComponent
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [ShoppingListSerivce],
   bootstrap: [AppComponent]
 })
