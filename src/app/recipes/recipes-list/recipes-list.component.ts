@@ -18,6 +18,9 @@ export class RecipesListComponent {
   ) {}
 
   ngOnInit() {
+    this.recipeService.recipesChanged.subscribe(data => {
+      this.recipes = data;
+    });
     this.recipes = this.recipeService.getRecipes();
   }
   onNewClicked() {

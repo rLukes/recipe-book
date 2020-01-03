@@ -14,8 +14,8 @@ import { ShoppingEditComponent } from "./shopping-list/shopping-edit/shopping-ed
 import { ShoppingListSerivce } from "./shopping-list/shoppinglist.serivce";
 import { RecipeStartComponent } from "./recipes/recipe-start/recipe-start.component";
 import { RecipeEditComponent } from "./recipes/recipe-edit/recipe-edit.component";
-import { FormsModule } from "@angular/forms";
-
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { RecipeService } from "./recipes/recipe.service";
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,8 +30,9 @@ import { FormsModule } from "@angular/forms";
     RecipeStartComponent,
     RecipeEditComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [ShoppingListSerivce],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
+
+  providers: [ShoppingListSerivce, RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
