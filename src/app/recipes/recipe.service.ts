@@ -7,15 +7,21 @@ import { Subject } from "rxjs";
 @Injectable()
 export class RecipeService {
   recipesChanged = new Subject<Recipe[]>();
-  private recipes: Recipe[] = [
+  private recipes: Recipe[] = [];
+  /*  private recipes: Recipe[] = [
     new Recipe(
       "Fish and curry",
       "Test food",
       "http://www.evocativepop.com/wp-content/uploads/2019/08/1.jpg",
       [new Ingredient("Apple", 3), new Ingredient("Orangem", 9)]
     )
-  ];
+  ]; */
   constructor(private sl: ShoppingListSerivce) {}
+
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.recipesChanged.next(this.recipes.slice());
+  }
 
   getRecipes() {
     return this.recipes.slice();
