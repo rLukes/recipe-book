@@ -1,3 +1,4 @@
+import { AuthComponent } from "./auth/auth.component";
 import { DropdownDirective } from "./shared/dropdown-directive";
 import { HeaderComponent } from "./header/header.component";
 import { BrowserModule } from "@angular/platform-browser";
@@ -30,7 +31,8 @@ import { HttpClientModule } from "@angular/common/http";
     ShoppingListComponent,
     ShoppingEditComponent,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
