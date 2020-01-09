@@ -28,4 +28,9 @@ export class HeaderComponent implements OnInit {
   fetchData() {
     this.ds.fetchRecipes().subscribe();
   }
+
+  logout() {
+    this.isAuthenticated = false;
+    this.as.logout();
+  }
 }
