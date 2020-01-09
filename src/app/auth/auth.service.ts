@@ -76,7 +76,27 @@ export class AuthService {
   ) {
     const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
     const user = new User(email, localId, token, expirationDate);
+    localStorage.setItem("userData", JSON.stringify(user));
     this.userSubject.next(user);
+  }
+
+  autoLogin() {
+    const userData: {
+      email: string;
+      id: string;
+      _token: string;
+      _tokenExpirationDate: string;
+    } = JSON.parse(localStorage.getItem("userData"));
+
+    const loadedUser = new User(
+      userData.email,
+      userData.id,
+      userData._token,
+      new Date(userData._tokenExpirationDate)
+    );
+    if (loadedUser.token) {
+      this.userSubject.next(loadedUser);
+    }
   }
 
   private handleError(errorRes: HttpErrorResponse) {
@@ -86,7 +106,7 @@ export class AuthService {
     }
     switch (errorRes.error.error.message) {
       case "EMAIL_EXISTS":
-        errorMessage = "This emial exists already";
+        errorMessage = "This email exists already";
         break;
       case "EMAIL_NOT_FOUND":
         errorMessage = "This email not exist";
