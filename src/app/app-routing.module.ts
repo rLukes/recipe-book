@@ -8,12 +8,14 @@ import { RecipesDetailComponent } from "./recipes/recipes-detail/recipes-detail.
 
 import { RecipeEditComponent } from "./recipes/recipe-edit/recipe-edit.component";
 import { RecipesResoverService } from "./recipes/recipes-resolver.service";
+import { AuthGuard } from "./auth/auth.guard";
 
 const routes: Routes = [
   { path: "", redirectTo: "/recipes", pathMatch: "full" },
   {
     path: "recipes",
     component: RecipesComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: "", component: RecipeStartComponent },
       { path: "new", component: RecipeEditComponent },
@@ -31,6 +33,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
+
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
