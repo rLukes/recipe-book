@@ -25,9 +25,10 @@ import { PlaceHolderDirective } from "./shared/placeholder/placheholder.directiv
 import { RecipesModule } from "./recipes/recipes.module";
 import { ShoppingListModule } from "./shopping-list/shoppinglist.module";
 import { SharedModule } from "./shared/shared.module";
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, AuthComponent],
+  declarations: [AppComponent, HeaderComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -36,7 +37,8 @@ import { SharedModule } from "./shared/shared.module";
     ReactiveFormsModule,
     RecipesModule,
     ShoppingListModule,
-    SharedModule
+    SharedModule,
+    AuthModule
   ],
 
   providers: [

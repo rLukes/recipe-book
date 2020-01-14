@@ -11,8 +11,7 @@ import { RecipesResoverService } from "./recipes/recipes-resolver.service";
 import { AuthGuard } from "./auth/auth.guard";
 
 const routes: Routes = [
-  { path: "", redirectTo: "/recipes", pathMatch: "full" },
-  { path: "auth", component: AuthComponent }
+  { path: "", redirectTo: "/recipes", pathMatch: "full" }
 ];
 
 @NgModule({
