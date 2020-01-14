@@ -22,31 +22,21 @@ import { LoadingSpinnerComponent } from "./shared/loading-spinner/loading-spinne
 import { AuthInterceptorService } from "./auth/auth-interceptor.service";
 import { AlertComponent } from "./shared/alert/alert.component";
 import { PlaceHolderDirective } from "./shared/placeholder/placheholder.directive";
+import { RecipesModule } from "./recipes/recipes.module";
+import { ShoppingListModule } from "./shopping-list/shoppinglist.module";
+import { SharedModule } from "./shared/shared.module";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    RecipesComponent,
-    RecipesListComponent,
-    RecipesDetailComponent,
-    DropdownDirective,
-    RecipeItemComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
-    RecipeStartComponent,
-    RecipeEditComponent,
-    AuthComponent,
-    LoadingSpinnerComponent,
-    AlertComponent,
-    PlaceHolderDirective
-  ],
+  declarations: [AppComponent, HeaderComponent, AuthComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RecipesModule,
+    ShoppingListModule,
+    SharedModule
   ],
 
   providers: [
@@ -58,7 +48,7 @@ import { PlaceHolderDirective } from "./shared/placeholder/placheholder.directiv
       multi: true
     }
   ],
-  entryComponents: [AlertComponent],
+
   bootstrap: [AppComponent]
 })
 export class AppModule {}
