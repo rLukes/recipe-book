@@ -16,6 +16,7 @@ import { AuthInterceptorService } from "./auth/auth-interceptor.service";
 import { ShoppingListModule } from "./shopping-list/shoppinglist.module";
 import { SharedModule } from "./shared/shared.module";
 import { AuthModule } from "./auth/auth.module";
+import { StoreModule } from "@ngrx/store";
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
@@ -27,7 +28,8 @@ import { AuthModule } from "./auth/auth.module";
     ReactiveFormsModule,
     ShoppingListModule,
     SharedModule,
-    AuthModule
+    AuthModule,
+    StoreModule.forRoot({})
   ],
 
   providers: [
